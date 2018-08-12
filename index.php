@@ -2,16 +2,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Тестовая страница</title>
+    <title>Тестовая страница</title>
 </head>
 <body>
 <?php 
-    $name = "Паша";
-    $age = 24;
-    echo "Меня зовут " . $name;
-    echo "<p>";
-    echo "Мне " . $age . " года";
-    echo 'Test';
+$x = 9;
+
+if ($x > 10) {
+    echo 'Число больше 10';
+} else {
+    echo 'Число меньше либо равно 10';
+}
+
 ?>
 </body>
 </html>
