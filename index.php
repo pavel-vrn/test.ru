@@ -6,12 +6,19 @@
 </head>
 <body>
 <?php 
-$x = 9;
-
-if ($x > 10) {
-    echo 'Число больше 10';
-} else {
-    echo 'Число меньше либо равно 10';
+include 'lib.php';
+echo 'Простые числа от 10 до 53: ' . '<br>';
+$count = 0;
+for ($i = 10; $i <= 53; $i++) {
+    if (checkSimpleNumber($i)) {
+        echo $i;
+        $count++;
+        if ($i != 53) {
+            echo ', ';
+        } else {
+            echo '. <br> Количество простых чисел: ' . $count;
+        }
+    }
 }
 
 ?>
