@@ -7,17 +7,28 @@
 <body>
 <?php 
 include 'lib.php';
-echo 'Простые числа от 10 до 53: ' . '<br>';
-$count = 0;
+
+$arr = array (
+    array(
+        "a" => "value",
+        "b" => "value",
+        "c" => "value",
+        "s" => "value",
+    )
+);
+
 for ($i = 10; $i <= 53; $i++) {
+    $arr_index = 0;
     if (checkSimpleNumber($i)) {
-        echo $i;
-        $count++;
-        if ($i != 53) {
-            echo ', ';
-        } else {
-            echo '. <br> Количество простых чисел: ' . $count;
+        switch ($arr_index) {
+            case 0: 
+                $arr[0]["a"] = i;
+            case 1:
+                $arr[0]["b"] = i;
+            case 2:
+                $arr[0]["c"] = i;
         }
+        $arr_index++;
     }
 }
 
