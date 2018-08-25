@@ -9,3 +9,8 @@ function checkSimpleNumber($number) {
     return true;
 }
 
+function trapeziumArea($base1, $base2, $height) {
+    $result = ($base1 + $base2) / 2 * $height;
+    return $result;
+}
+
