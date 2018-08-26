@@ -1,4 +1,3 @@
-<!--в двойных кавычках интерпретатор будет пытаться найти переменные, а внутри одинарных кавычек – нет -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,14 +5,15 @@
 </head>
 <body>
 <?php 
+//библиотека функций
 include 'lib.php';
 
 $arr = array (
     array(
-        "a" => "value",
-        "b" => "value",
-        "h" => "value",
-        "s" => "value",
+        "a" => "value", // основание траепеции 1
+        "b" => "value", // основание трапеции 2
+        "h" => "value", // высота трапеции
+        "s" => "value", // площадь трапеции 
     )
 );
 
@@ -48,8 +48,13 @@ do {
     $i++;
 } while ($i < count($arr) && $arr[$i]["s"] < 1400);
 
-var_dump($arr_result);
-echo max($arr_result);
+$max = array_keys($arr_result, max($arr_result))[0];
+
+echo 'Размеры трапеции, у которой максимальная площадь, но не больше 1400: <br>' . 
+        'a = ' . $arr[$max]["a"] . ';<br>' .
+        'b = ' . $arr[$max]["b"] . ';<br>' .
+        'h = ' . $arr[$max]["h"] . '.<br>';
 ?>
+    
 </body>
 </html>
