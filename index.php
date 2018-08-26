@@ -5,8 +5,7 @@
 </head>
 <body>
 <?php 
-//библиотека функций
-include 'lib.php';
+include 'lib.php'; //библиотека функций
 
 $arr = array (
     array(
@@ -17,43 +16,50 @@ $arr = array (
     )
 );
 
-$arr_index = 0;
+// индексы двумерного массива $arr
+$i = 0;
 $j = 0;
-for ($i = 10; $i <= 53; $i++) {
-    if (checkSimpleNumber($i)) {
-        switch ($arr_index) {
+// заполняем двумерный массив простыми числами, группируя по 3 числа
+for ($number = 10; $number <= 53; $number++) {
+    if (checkSimpleNumber($number)) {
+        switch ($i) {
             case 0: 
-                $arr[$j]["a"] = $i;
-                $arr_index++;
+                $arr[$j]["a"] = $number;
+                $i++;
                 break;
             case 1:
-                $arr[$j]["b"] = $i;
-                $arr_index++;
+                $arr[$j]["b"] = $number;
+                $i++;
                 break;
             case 2:
-                $arr[$j]["h"] = $i;
+                $arr[$j]["h"] = $number;
                 $arr[$j]["s"] = trapeziumArea($arr[$j]["a"], $arr[$j]["b"], $arr[$j]["h"]);
                 $j++;
-                $arr_index = 0;
+                $i = 0; // когда все 3 значения заполнены, обнуляем счётчик
                 break;
         }
     }
 }
 var_dump($arr);
 
-$arr_result = array();
+$arr_result = array(); // массив значений площадей трапеций
 $i = 0;
 do {
     $arr_result[$i] = $arr[$i]["s"];
     $i++;
-} while ($i < count($arr) && $arr[$i]["s"] < 1400);
+} while ($i < count($arr) && $arr[$i]["s"] < 1400); // заполняем массив значениями площадей
 
-$max = array_keys($arr_result, max($arr_result))[0];
+$max = array_keys($arr_result, max($arr_result))[0]; // получаем индекс максимального элмента массива
 
 echo 'Размеры трапеции, у которой максимальная площадь, но не больше 1400: <br>' . 
         'a = ' . $arr[$max]["a"] . ';<br>' .
         'b = ' . $arr[$max]["b"] . ';<br>' .
         'h = ' . $arr[$max]["h"] . '.<br>';
+
+echo involution(3, 4) . '<br><br>';
+
+//echo calcExpression(2, 3, 4);
+
 ?>
     
 </body>
