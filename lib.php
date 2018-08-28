@@ -1,5 +1,6 @@
 <?php
 
+//проверка, является ли число простым
 function checkSimpleNumber($number) {
     for ($i = 2; $i <= $number; $i++) {
         if ($number % $i == 0 && $i != $number) {
@@ -9,11 +10,13 @@ function checkSimpleNumber($number) {
     return true;
 }
 
+//вычисление площади трапеции
 function trapeziumArea($base1, $base2, $height) {
     $result = ($base1 + $base2) / 2 * $height;
     return $result;
 }
-                                                                             
+               
+// возведение в степень
 function involution($base, $index) {
     return $base ** $index;
 }

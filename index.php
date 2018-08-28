@@ -56,9 +56,11 @@ echo 'Размеры трапеции, у которой максимальная площадь, но не больше 1400: <br>'
         'b = ' . $arr[$max]["b"] . ';<br>' .
         'h = ' . $arr[$max]["h"] . '.<br>';
 
-echo involution(3, 4) . '<br><br>';
+echo calcExpression(43, 47, 53) . '</br>';
 
-//echo calcExpression(2, 3, 4);
+for ($i = 0; $i < count($arr); $i++) {
+    echo calcExpression($arr[$i]["a"], $arr[$i]["b"], $arr[$i]["h"]) . '<br>' ;
+}
 
 ?>
     
