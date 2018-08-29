@@ -15,7 +15,6 @@ function trapeziumArea($base1, $base2, $height) {
     $result = ($base1 + $base2) / 2 * $height;
     return $result;
 }
-
                
 // возведение в степень
 function involution($base, $index) {
