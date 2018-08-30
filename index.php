@@ -40,7 +40,6 @@ for ($number = 10; $number <= 53; $number++) {
         }
     }
 }
-var_dump($arr);
 
 $arr_result = array(); // массив значений площадей трапеций
 $i = 0;
@@ -56,13 +55,31 @@ echo 'Размеры трапеции, у которой максимальная площадь, но не больше 1400: <br>'
         'b = ' . $arr[$max]["b"] . ';<br>' .
         'h = ' . $arr[$max]["h"] . '.<br>';
 
-echo calcExpression(43, 47, 53) . '</br>';
-
 for ($i = 0; $i < count($arr); $i++) {
-    echo calcExpression($arr[$i]["a"], $arr[$i]["b"], $arr[$i]["h"]) . '<br>' ;
+    $arr[$i]["f"] = calcExpression($arr[$i]["a"], $arr[$i]["b"], $arr[$i]["h"]);
 }
 
+// установка ключа "odd" для трапеций с нечётным значением площади
+for ($i = 0; $i < count($arr); $i++) {
+    if ($arr[$i]["s"] % 2 != 0) {
+        $arr[$i]["odd"] = true;
+    }
+}
+
+//var_dump($arr);
 ?>
-    
+<br>
+<table border="1">
+    <tr>
+        <th>a</th>
+        <th>b</th>
+        <th>c</th>
+        <th>f</th>
+        <th>нечетный</th>
+    </tr>
+
+</table>
+
+
 </body>
 </html>
