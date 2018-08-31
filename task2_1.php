@@ -92,7 +92,11 @@ for ($i = 0; $i < count($arr); $i++) {
 <p>
     Работа с классами
 </p>
+<?php
+require_once( "Classes\Formula_One.php" );
+$instance = new Formula_One();
 
+?>
 
 </body>
 </html>
